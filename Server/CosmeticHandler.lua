@@ -2,6 +2,10 @@ local RS = game:GetService("ReplicatedStorage")
 local CosmeticEventFolder = RS:WaitForChild("CosmeticSystem")
 local GetData = CosmeticEventFolder:WaitForChild("GetData")
 
+local PlayerService = game:GetService("Players")
+local DS = game:GetService("DatastoreService")
+local CollectionData = DS:GetDatastore("Collections")
+
 local Data = {
 	
 	"Common Baller Shirt",
@@ -12,6 +16,8 @@ local Data = {
 	"Rare Navraj Top"
 	
 }
+
+Players.PlayerAdded:Connect(function(plr)
 
 GetData.OnServerEvent:Connect(function(plr)
 	
